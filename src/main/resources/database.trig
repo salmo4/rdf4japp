@@ -1,0 +1,218 @@
+@prefix :<http://samuel-gui.at/>.
+@prefix xsd:<http://www.w3.org/2001/XMLSchema/>.
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema/>.
+@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl/> .
+@prefix do:   <http://samuel-gui.com/ns/data/> .
+
+:carsgraph
+{
+#Companiile auto sunt definite mai jos
+
+:Wolksvagen				:coownerOf :AudiAG, :BentleyMotorsLtd;
+						:hasName "Volkswagen Aktiengesellschaft";
+						:fromCountry "Germany";
+						rdfs:comment "Proprietar celebru de automobile Volkswagen, acestea sunt vândute în număr mare în fiecare an.".
+
+:Renault				:ownerOf :Dacia;
+						:hasName "Renault";
+						:fromCountry "France";
+						rdfs:comment "Producator al celor mai populare autovehicule Romanesti.".
+
+:Mercedes				:ownerOf :Smart, :Mercedes;
+						:hasName "Mercedes-Benz";
+						:fromCountry "Germany";
+						rdfs:comment "Mercedes este cea mai vanduta marca de masina.".
+
+:BMW					:ownerOf :BMW, :RollsRoyce;
+						:hasName "Bayerische Motoren Werke";
+						:fromCountry "Germany";
+						rdfs:comment "BMW este unul dintre cei mai de incredere producator de masini.".
+
+:Ford					:coownerOf :Mazda, :AstonMartin;
+						:ownerOf :FordVehicles;
+						:hasName "Ford Motor Company";
+						:fromCountry "S.U.A";
+						rdfs:comment "Ford este cel mai bun constructor auto din Statele Unite ale Americi.".
+
+:PeugeotCitroen			:ownerOf :Citroen, :Peugeot;
+						:hasName "PSA Peugeot Citroen";
+						:fromCountry "France";
+						rdfs:comment "PSA Peugeot Citroen un producător multinațional francez de automobile si motociclete.".
+
+:AvtoVAZ				:ownerOf :Lada;
+						:hasName "Volzhsky Avtomobilny Zavod";
+						:fromCountry "Russia";
+						rdfs:comment "Lada cars became popular in Russia and Eastern Europe during the last two decades of the Soviet era, particularly in former Soviet bloc countries.".
+
+:Ferrari				:ownerOf :Ferrari;
+						:hasName "Ferrari S.p.A.";
+						:fromCountry "Italy";
+						rdfs:comment "Ferrari este cel mai puternic brand din lume în funcție de Brand Finance.".
+
+:Hyundai				:coownerOf :KiaMotors;
+						:ownerOf :Hyundai;
+						:fromCountry "South Korea";
+						rdfs:comment "Cel mai puternic producător de automobile din Asia".
+
+#Modelele de masini de mai jos sunt definite
+
+:AudiA8					:hasBodyStyle "4-door sedan";
+						:wasReleasedIn 2009;
+						:belongsTo :Wolksvagen;
+						rdfs:comment "Aceast model reprezinta o mașină".
+
+:Dacia1310				:hasBodyStyle "4-doors sedan";
+						:wasReleasedIn 1969;
+						:belongsTo :Renault;
+						rdfs:comment "Aceast model reprezinta o mașină".
+
+:Ferrari250GTO			:hasBodyStyle "Berlinetta";
+						:wasReleasedIn 1962;
+						:belongsTo :Ferrari;
+						rdfs:comment "Aceast model reprezinta o mașină".
+
+:LadaRiva				:hasBodyStyle "4-door sedan or 5-door estate";
+						:wasReleasedIn 1980;
+						:belongsTo :AvtoVAZ;
+						rdfs:comment "Aceast model reprezinta o mașină".
+
+:BMWe30					:hasBodyStyle "2-door compact sedan, 2-door convertible, 4-door compact sedan, 5-door estate";
+						:wasReleasedIn 1982;
+						:belongsTo :BMW;
+						rdfs:comment "Aceast model reprezinta o mașină".
+
+:MercedesBenzSClass		:hasBodyStyle "4-door sedan";
+						:WasReleasedIn 1972;
+						:belongsTo :Mercedes;
+						rdfs:comment "Aceast model reprezinta o mașină".
+
+:HyundaiAccent			:hasBodyStyle "front engine";
+						:WasReleasedIn 1994;
+						:belongsTo :Hyundai;
+						rdfs:comment "Aceast model reprezinta o mașină".
+
+:Peugeot206				:hasBodyStyle "3/5-door hatchback";
+						:wasReleasedIn 1998;
+						:belongsTo :PeugeotCitroen;
+						rdfs:comment "Aceast model reprezinta o mașină".
+
+:FordGT90				:hasBodyStyle "quad-turbocharged V12 engine DOHC";
+						:wasReleasedIn 1995;
+						:belongsTo :Ford;
+						rdfs:comment "Aceast model reprezinta o mașină".
+
+
+						
+						
+
+}
+						
+						
+:carsshopgraph
+{
+
+#Mai jos sunt descrise masinile disponibile
+
+:AudiA8					:isInDealership :Audi;
+						:hasPrice 75000;
+						:onStock 5;
+						rdfs:comment "Această resursă este o mașină această resursă conține informații despre o mașină care se schimbă.".
+
+:Dacia1310				:isInDealership :CarGarage;
+						:hasPrice 750;
+						:onStock 13;
+						rdfs:comment "Această resursă este o mașină această resursă conține informații despre o mașină care se schimbă.".
+
+:Ferrari250GTO			:isInDealership :CarGarage;
+						:hasPrice 125000;
+						:onStock 1;
+						rdfs:comment "Această resursă este o mașină această resursă conține informații despre o mașină care se schimbă.".
+
+:LadaRiva				:isInDealership :CarGarage;
+						:hasPrice 10000;
+						:onStock 32;
+						rdfs:comment "Această resursă este o mașină această resursă conține informații despre o mașină care se schimbă.".
+
+:BMWe30					:isInDealership :BMWGarage;
+						:hasPrice 45500;
+						:onStock 0;
+						rdfs:comment "Această resursă este o mașină această resursă conține informații despre o mașină care se schimbă.".
+
+:MercedesBenzSClass		:isInDealership :MercedesBenz;
+						:hasPrice 75000;
+						:onStock 23;
+						rdfs:comment "Această resursă este o mașină această resursă conține informații despre o mașină care se schimbă.".
+
+:HyundaiAccent			:isInDealership :CarGarage;
+						:hasPrice 16500;
+						:onStock 9;
+						rdfs:comment "Această resursă este o mașină această resursă conține informații despre o mașină care se schimbă.".
+
+:Peugeot206				:isInDealership :CarGarage;
+						:hasPrice 6000;
+						:onStock 3;
+						rdfs:comment "Această resursă este o mașină această resursă conține informații despre o mașină care se schimbă.".
+
+:FordGT90				:isInDealership :Ford;
+						:hasPrice 66000;
+						:onStock 19;
+						rdfs:comment "Această resursă este o mașină această resursă conține informații despre o mașină care se schimbă.".
+
+#Mai jos sunt descrise dealeri auto
+
+:Audi 					:hasName "Audi";
+						rdfs:comment "Audi este unul dintre cei mai mari dealeri din Europa de Vest.".
+
+:CarGarage				:hasName "Car Garage";
+						rdfs:comment "Garaj auto este singurul dealer în cazul în care cineva doreste sa gaseasca diferite tipuri de mașini vechi".
+
+:BMWGarage				:hasName "BMW Garage";
+						rdfs:comment "Garajul BMW reprezinta singurul dealer BMW din Romania".
+
+:MercedesBenz  			:hasName "Mercedes Benz";
+						rdfs:comment "Dealerul Mercedes-Benz detine masini noi si vechi de tipul Mercedes".
+
+:Ford 					:hasName "Ford";
+						rdfs:comment "Fordul detine cel mai mare parc de distributie Ford.".
+
+# Mai jos sunt domeniile descrise și co-domains ale relațiilor, relațiile subclasă și relații sub-Propietati
+
+:isInDealership			rdfs:domain :Car;
+						rdfs:range :CarDealership.
+
+:hasPrice				rdfs:domain :Price;
+						rdfs:range	xsd:integer.
+
+:onStock				rdfs:domain :Stock;
+						rdfs:range	xsd:integer.
+
+:hasName				rdfs:subPropertyOf rdfs:label.
+
+
+
+#Mai jos sunt descrise domenii, co-domenii, relațiile sub-clasă și relații sub-Propietati
+
+:ownerOf				rdfs:domain :CarManufacturer;
+						rdfs:range :Car.
+
+:fromCountry			rdfs:domain :Country;
+						rdfs:range :Car.
+
+:wasReleasedIn			rdfs:domain :Year;
+						rdfs:range	xsd:integer.
+
+:belongsTo				rdfs:domain :CarManufacturer;
+						rdfs:range :Car.
+
+:CarManufacturer		rdfs:subClassOf :Manufacturers.
+:Country				rdfs:subClassOf :Place.
+:Year 					rdfs:subClassOf :Place.	
+
+:ownerOf 				rdfs:subPropertyOf 		:creatorOf.
+:coownerOf 				rdfs:subPropertyOf 		:writerOf.
+:fromCountry			rdfs:subPropertyOf 		rdfs:label.
+:hasName	 			rdfs:subPropertyOf 		rdfs:label.
+:hasBodyStyle			rdfs:subPropertyOf		rdfs:label.
+}
